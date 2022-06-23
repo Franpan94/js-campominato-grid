@@ -1,26 +1,35 @@
 let gridcontainer = document.getElementById('grid-container');
 let button = document.getElementById('button');
 
-creategridelementclass(button , 'd-block');
 
-for (let i = 0 ; i < 100 ; i++) {
-    let gridbox = creategridbox ();
-
-    gridbox.innerHTML = i;
-
-    if(i % 2 === 0) {
+button.addEventListener('click' , function(){
         
-        creategridelementclass(gridbox , 'azure-box');
-    
-    } else {
 
-        creategridelementclass(gridbox , 'red-box');
+    gridcontainer.innerHTML='';
+
+    for (let i = 0 ; i < 100 ; i++) {
+        let gridbox = creategridbox ();
+    
+        
+        gridbox.innerHTML = i;
+    
+        if(i % 2 === 0) {
+            
+            creategridelementclass(gridbox , 'azure-box');
+        
+        } else {
+    
+            creategridelementclass(gridbox , 'red-box');
+        
+        }
+    
+        gridcontainer.append(gridbox);
     
     }
+    
+})
 
-    gridcontainer.append(gridbox);
 
-}
 
 
 
